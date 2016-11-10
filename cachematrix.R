@@ -1,6 +1,8 @@
+## Second function gives inverse of a matrix and uses first function
+## to check if it is already computed and stored in cache
+
 ## First function takes a matrix and creates a list with 
 ## 4 local functions to operate on the matrix object.
-
 ## set function used to initialze the local varible, get function to return the originl matrix
 ## setinv to store inv into cache and getinv to get the inverse stored.
 
@@ -22,11 +24,11 @@ makeCacheMatrix <- function(x = matrix()) {
 ## if not then it calculates the inverse and stores it in the cache variables using the previous function
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+        
   inv<-x$getinv()
   if(!is.null(inv)){
       message("Getting from Cache")
-      return(m)
+      return(inv)
   }
   data<-x$get()
   inv<-solve(data,...)
